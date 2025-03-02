@@ -1,0 +1,1 @@
+export const testLog = "Test success."
