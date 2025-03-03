@@ -1,13 +1,13 @@
 // import scripts
-import './task.js';
-import './taskManager.js';
-import './domHandler.js';
-import {loadPage} from './domHandler.js';
+import Task from './task.js';
+import TaskList from './taskManager.js';
+import {loadNav, refreshLists} from './domHandler.js';
+import {saveToLocalStorage, loadFromLocalStorage, addNewList, getLists} from './storage.js';
 
 //import styles
 import './styles.css';
 
-loadPage();
+loadNav();
 console.log("index.js running successfully.");
 
 // consider new font for title
