@@ -1,3 +1,5 @@
-import {testLog} from './test.js';
+import './task.js';
+import './taskManager.js';
+import './domHandler.js';
 
-console.log(testLog); // Should display 'Test success.' in console.
+console.log("index.js running successfully.");
