@@ -8,7 +8,8 @@ export default class TaskList {
     }
     
     addTask(task) {
-        this.tasks.push(task);
+        const newTask = new Task(title, description, dueDate, priority);
+        this.tasks.push(newTask);
         saveToLocalStorage();
     }
 
