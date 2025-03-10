@@ -193,7 +193,7 @@ function enableTaskEditing(taskElement, selectedList, taskIndex, listIndex) {
             <img class='save-icon' src='${moreIcon}'>
             <img class='remove-icon' src='${removeIconDark}'>
         </div>
-        <textarea class="edit-task-description">${task.description || ""}</textarea>
+        <textarea class="edit-task-description" placeholder="Description...">${task.description || ""}</textarea>
         <div class="task-meta">
             <input type="date" class="edit-task-dueDate" value="${task.dueDate || ""}">
             <select class="edit-task-priority">
@@ -220,6 +220,35 @@ function enableTaskEditing(taskElement, selectedList, taskIndex, listIndex) {
     });
 }
 
+function saveNewTask(listIndex) {
+    const lists = getLists();
+    const selectedList = lists[listIndex];
+
+    const titleInput = document.getElementById("new-task-title");
+    const title = titleInput.value.trim();
+    const description = document.getElementById("new-task-description").value.trim();
+    const dueDate = document.getElementById("new-task-dueDate").value;
+    const priority = document.getElementById("new-task-priority").value;
+
+    if (title === "") return; // Don't save if empty
+
+    // Create and add new task
+    const newTask = new Task(title, description, dueDate, priority);
+    selectedList.tasks.push(newTask);
+    saveToLocalStorage();
+
+    // Clear input fields immediately to prevent duplicate triggers
+    titleInput.value = "";
+    document.getElementById("new-task-description").value = "";
+    document.getElementById("new-task-dueDate").value = "";
+    document.getElementById("new-task-priority").value = "Low";
+
+    // Hide task details again
+    document.getElementById("task-details").classList.add("hidden");
+
+    // Reload the list to show the new task
+    loadTaskList(listIndex);
+}
 
 function saveEditedTask(taskElement, selectedList, taskIndex, listIndex) {
     const task = selectedList.tasks[taskIndex];
