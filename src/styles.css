@@ -247,3 +247,9 @@ footer {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
+footer a {
+    height: 30px;
+    width: 30px;
+    margin-left: 10px;
+}
