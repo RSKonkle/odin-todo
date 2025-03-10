@@ -164,6 +164,13 @@ function loadTaskList(index) {
         }
     });
 
+    titleInput.addEventListener("keypress", (event) => {
+        if (event.key === "Enter") {
+            event.preventDefault(); // Prevents accidental form submission
+            saveNewTask(index);
+        }
+    });
+
     // Apply blur event to ALL inputs
     [titleInput, 
      addTaskInput.querySelector("#new-task-description"), 
