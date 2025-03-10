@@ -1,8 +1,7 @@
 // import scripts
 import Task from './task.js';
 import TaskList from './taskManager.js';
-import {loadNav, refreshLists} from './domHandler.js';
-import {saveToLocalStorage, loadFromLocalStorage, addNewList, getLists} from './storage.js';
+import {loadNav} from './domHandler.js';
 
 //import styles
 import './styles.css';

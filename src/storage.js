@@ -1,21 +1,23 @@
 // storage.js - for handling local storage of lists and tasks
-let lists = JSON.parse(localStorage.getItem('taskLists')) || [];
+import TaskList from './taskManager.js';
+
+let lists = JSON.parse(localStorage.getItem('taskLists'))?.map(list => new TaskList(list.name, list.tasks)) || [];
 
 export function saveToLocalStorage() {
-  localStorage.setItem('taskLists', JSON.stringify(lists));
+    localStorage.setItem('taskLists', JSON.stringify(lists));
 }
 
 export function loadFromLocalStorage() {
-  lists = JSON.parse(localStorage.getItem('taskLists')) || [];
-  return lists;
+    lists = JSON.parse(localStorage.getItem('taskLists'))?.map(list => new TaskList(list.name, list.tasks)) || [];
+    return lists;
 }
 
 export function addNewList(name) {
-  const newList = { name, tasks: [] };
-  lists.push(newList);
-  saveToLocalStorage();
+    const newList = new TaskList(name);
+    lists.push(newList);
+    saveToLocalStorage();
 }
 
 export function getLists() {
-  return lists;
+    return lists;
 }

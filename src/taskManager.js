@@ -2,12 +2,12 @@
 import Task from './task.js';
 
 export default class TaskList {
-    constructor(name, tasks){
+    constructor(name, tasks = []) {
         this.name = name;
-        this.tasks = [];
+        this.tasks = tasks.map(task => new Task(task.title, task.description, task.dueDate, task.priority));
     }
     
-    addTask(task) {
+    addTask(title, description, dueDate, priority) {
         const newTask = new Task(title, description, dueDate, priority);
         this.tasks.push(newTask);
         saveToLocalStorage();
@@ -22,7 +22,5 @@ export default class TaskList {
         return this.tasks;
     }
 }
-
-
 
 console.log("taskManager.js running successfully.")

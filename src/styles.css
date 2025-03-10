@@ -13,7 +13,7 @@
 }
 
 #content {
-    height: calc(100vh - 50px);
+    height: calc(100vh - 70px);
     width: calc(100vw - 300px);
     padding: 20px;
     position: fixed;
@@ -26,10 +26,14 @@
 
 #content h2 {
     font-size: 40px;
+    padding: 10px;
+    margin-bottom: 20px;
+    color: var(--dark-frosted-sage);
+    border-bottom: 1px solid var(--dark-frosted-sage);
 }
 
 #nav {
-    height: calc(100vh - 50px);
+    height: calc(100vh - 70px);
     width: 300px;
     padding: 20px;
     background: var(--dark-frosted-sage);
@@ -76,17 +80,47 @@ nav h3 {
 ul {
     color: var(--foggy-pearl);
     list-style-type: disc;
-    padding: 20px 40px;
+    padding: 20px 20px;
     font-size: 18px;
+    list-style: none;
 }
 
 li {
     cursor: pointer;
+    padding: 5px 0;
+}
+
+.list-item-wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    margin: 15px 0;
+}
+
+.remove-icon {
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+}
+
+.remove-icon:hover {
+    opacity: 0.7;
+}
+
+.more-icon {
+    padding-right: 20px;
+    cursor: pointer;
+}
+
+.more-icon:hover {
+    opacity: 0.7;
 }
 
 footer {
-    height: 50px;
+    height: 70px;
     width: 100vw;
+    font-size: 20px;
     position: fixed;
     bottom: 0;
     background-color: var(--frosted-sage);
@@ -95,4 +129,121 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#task-container {
+    width: 40%;
+}
+
+.task-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.task-meta p {
+    margin: 0;
+    padding: 5px 0;
+}
+
+
+/* TEMP TASK LIST STYLES */
+.new-task input,
+.new-task select {
+    width: 100%;
+    padding: 5px;
+    font-size: 16px;
+}
+
+.hidden {
+    display: none;
+}
+
+.task {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    color: var(--dark-frosted-sage);
+}
+
+.task input {
+    border: none;
+    outline: none;
+    font-size: 18px;
+    width: 100%;
+    background-color: inherit;
+}
+
+.remove-task {
+    padding: 4px 10px;
+}
+
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.task-header h3 {
+    margin: 0;
+    flex-grow: 1; /* Ensures title takes available space */
+}
+
+.remove-task {
+    background: none;
+    border: none;
+    color: red;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.task-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.task-meta p {
+    margin: 0;
+    padding: 5px 0;
+}
+
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.task-header input {
+    flex-grow: 1;
+    font-size: 16px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.edit-task-description {
+    width: 100%;
+    font-size: 14px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.task-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.task-meta select, .task-meta input {
+    flex: 1;
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
