@@ -13,7 +13,7 @@
 }
 
 #content {
-    height: 100vh;
+    height: calc(100vh - 50px);
     width: calc(100vw - 300px);
     padding: 20px;
     position: fixed;
@@ -29,7 +29,7 @@
 }
 
 #nav {
-    height: 100%;
+    height: calc(100vh - 50px);
     width: 300px;
     padding: 20px;
     background: var(--dark-frosted-sage);
@@ -84,3 +84,15 @@ li {
     cursor: pointer;
 }
 
+footer {
+    height: 50px;
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    background-color: var(--frosted-sage);
+    color: var(--dark-frosted-sage);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
